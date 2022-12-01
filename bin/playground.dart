@@ -51,8 +51,10 @@ Future<void> createModule() async {
   }
 
   //make the controller files
-  File("lib/modules/$moduleName/${moduleName}_controller.dart").create();
-  File("lib/modules/$moduleName/${moduleName}_view.dart").create();
+  File("lib/modules/$moduleName/${moduleName}_controller.dart")
+      .create(recursive: true);
+  File("lib/modules/$moduleName/${moduleName}_view.dart")
+      .create(recursive: true);
   await Directory("lib/modules/$moduleName/widgets").create(recursive: true);
   stdout.write("\n👍 $moduleName created.");
 }
